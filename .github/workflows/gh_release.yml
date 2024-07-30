@@ -1,7 +1,9 @@
 name: Release
 on:
   push:
-    tags: ["*"]
+    branches: ["master"]
+  workflow_dispatch:
+  
 jobs:
   release:
     concurrency: release
