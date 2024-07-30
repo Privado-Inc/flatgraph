@@ -215,6 +215,17 @@ ThisBuild / compile / javacOptions ++= Seq(
 Global / cancelable           := true
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
+githubOwner      := "Privado-Inc"
+githubRepository := "flatgraph"
+
+credentials +=
+  Credentials(
+    "GitHub Package Registry",
+    "maven.pkg.github.com",
+    "Privado-Inc",
+    sys.env.getOrElse("GITHUB_TOKEN", "N/A")
+  )
+
 ThisBuild / publishTo := sonatypePublishToBundle.value
 sonatypeCredentialHost := "s01.oss.sonatype.org"
 ThisBuild / scmInfo := Some(
