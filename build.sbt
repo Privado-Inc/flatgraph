@@ -226,7 +226,7 @@ credentials +=
     sys.env.getOrElse("GITHUB_TOKEN", "N/A")
   )
 
-ThisBuild / publishTo := sonatypePublishToBundle.value
+ThisBuild / publishTo := githubPublishTo.value
 sonatypeCredentialHost := "s01.oss.sonatype.org"
 ThisBuild / scmInfo := Some(
   ScmInfo(url("https://github.com/joernio/flatgraph"), "scm:git@github.com:joernio/flatgraph.git")
